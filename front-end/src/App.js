@@ -1,35 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+
+import Search from './containers/Search'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          Header
-        </header>
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              1 of 2
-            </div>
-            <div className="col">
-              1 of 2
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              1 of 3
-            </div>
-            <div className="col">
-              1 of 3
-            </div>
-            <div className="col">
-              1 of 3
-            </div>
-          </div>
-        </div>
-      </div>
+      <Fragment>
+        <Switch>
+          <Route path="/search" component={Search} />
+          {/* <Route path="/orders" component={Orders} /> */}
+          {/* <Route path="/" exact component={BurgerBuilder} /> */}
+        </Switch>
+      </Fragment>
     );
   }
 }
