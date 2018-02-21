@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import Header from '../../components/header'
+import Header from '../../components/eader';
+import Footer from '../../components/footer'
 class Search extends Component {
     componentDidMount () {
     }
@@ -10,6 +11,7 @@ class Search extends Component {
         return (
             <Fragment>
                 <Header />
+                <Footer />
             </Fragment>
         )
     }
