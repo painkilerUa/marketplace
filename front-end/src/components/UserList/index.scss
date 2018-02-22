@@ -1,0 +1,14 @@
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.user-list-item {
+    margin: 0 -15px;
+    background-color: #fff;
+    border-top: 2px solid #f9f9f9;
+    &:hover {
+        background-color: #f9f9f9;
+        cursor: pointer;
+    }
+}

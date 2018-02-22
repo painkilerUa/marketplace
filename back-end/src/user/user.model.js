@@ -15,6 +15,12 @@ const userSchema = new Schema({
     },
     tags: {
         type: Array,
+    },
+    rate: {
+        type: String,
+    },
+    description: {
+        type: String,
     }
 }, {
 timestamps: true

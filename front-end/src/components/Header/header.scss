@@ -1,0 +1,9 @@
+@import '../../assets/styles/01-base/_variables';
+.navbar {
+    min-height: 60px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+    h3 {
+        color: $green;
+    }
+}
