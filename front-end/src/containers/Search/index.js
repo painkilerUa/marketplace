@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import UserList from '../../components/UserList';
 import FilterPanel from '../../components/FilterPanel';
-import * as actions from '../../store/actions/index';
+import * as actions from '../../store/actions';
 
 import './index.scss';
 
@@ -40,7 +40,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUsers: () => dispatch( actions.fetchUsers() )
+        fetchUsers: () => dispatch(actions.fetchUsers())
     };
 };
 

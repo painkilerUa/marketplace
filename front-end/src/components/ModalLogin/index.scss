@@ -1,0 +1,13 @@
+@import '../../assets/styles/01-base/_variables';
+.modal-login {
+    display: block!important;
+    top: 100px;
+}
+.login-btn {
+    background-color: $green;
+    &:hover {
+        background-color: #259610;
+        border-color: #259610;
+    }
+    border-color: #259610;
+}

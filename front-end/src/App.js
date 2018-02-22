@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 // import './App.sass';
 
 import Search from './containers/Search'
+import IndexAdmin from './containers/Admin/Index'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <Fragment>
         <Switch>
           <Route path="/search" component={Search} />
-          {/* <Route path="/orders" component={Orders} /> */}
+          <Route path="/admin" component={IndexAdmin} />
           {/* <Route path="/" exact component={BurgerBuilder} /> */}
         </Switch>
       </Fragment>
