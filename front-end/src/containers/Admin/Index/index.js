@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 
 import TopNav from '../../../components/Admin/TopNav'
 import ModalLogin from '../../../components/ModalLogin'
+import AddEditUser from '../../../components/Admin/AddEditUser'
 import * as actions from '../../../store/actions';
 
 class AdminIndex extends Component {
     state = {
         login: '',
-        password: ''
+        password: '',
+        isModalNewUserOpen: true
     }
     closeHandler = () => {
         if (!this.props.authorized) return
@@ -36,7 +38,12 @@ class AdminIndex extends Component {
                             login={this.state.login}
                             password={this.state.password}
                         />
-                    )}                    
+                    )}
+                    {
+                        this.state.isModalNewUserOpen ? (
+                            <AddEditUser />
+                        ) : null
+                    }         
             </Fragment>
         )
     }
