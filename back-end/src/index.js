@@ -31,7 +31,6 @@ app
 
   // error handling
   .use((error, req, res, next) => {
-    res.send('Hello')
     let err = {
       message: error.toString()
     }

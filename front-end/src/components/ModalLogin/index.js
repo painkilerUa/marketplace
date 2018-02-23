@@ -36,7 +36,19 @@ const ModalLogin = props => {
                         </div>
                     </form>
                 </div>
-                <div className="modal-footer">
+                <div className="modal-footer justify-content-between">
+                    <span>
+                        {
+                            props.loading ? (
+                            'Loading...'
+                            ) : null
+                        }
+                        {
+                            props.hasError ? (
+                                'Invalid user password or login'
+                            ) : null
+                        }
+                    </span>
                     <button
                         type="button"
                         className="btn btn-primary login-btn"

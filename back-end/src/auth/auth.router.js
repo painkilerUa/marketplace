@@ -1,8 +1,8 @@
 import { Router } from 'express'
 
-import ctrl from './user.controller'
+import ctrl from './auth.controller'
 
 const router = new Router()
 
 export default router
-    .get('/', ctrl.call('getAll'))
+  .post('/', ctrl.call('login'))

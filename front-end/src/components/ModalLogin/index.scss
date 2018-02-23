@@ -1,7 +1,9 @@
 @import '../../assets/styles/01-base/_variables';
 .modal-login {
     display: block!important;
-    top: 100px;
+}
+.modal-dialog {
+    margin-top: 200px;
 }
 .login-btn {
     background-color: $green;

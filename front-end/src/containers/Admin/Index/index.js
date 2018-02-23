@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
+import TopNav from '../../../components/Admin/TopNav'
 import ModalLogin from '../../../components/ModalLogin'
 import * as actions from '../../../store/actions';
 
@@ -23,22 +24,30 @@ class AdminIndex extends Component {
     }
     render () {
         return (
-            this.props.authorized ? null : (
-                <ModalLogin 
-                    closeHandler={this.closeHandler}
-                    loginHandler={this.loginHandler}
-                    onInputHandler={this.onInputHandler}
-                    login={this.state.login}
-                    password={this.state.password}
-                />
-            )
+            <Fragment>
+                <TopNav />
+                    {this.props.authorized ? null : (
+                        <ModalLogin
+                            loading={this.props.loading}
+                            hasError={this.props.hasError}
+                            closeHandler={this.closeHandler}
+                            loginHandler={this.loginHandler}
+                            onInputHandler={this.onInputHandler}
+                            login={this.state.login}
+                            password={this.state.password}
+                        />
+                    )}                    
+            </Fragment>
         )
     }
 }
 
 const mapStateToProps = state => {
+    const { authorized, loading, hasError } = state.auth
     return {
-        authorized: state.auth.authorized,
+        authorized,
+        loading,
+        hasError
     };
 };
 
