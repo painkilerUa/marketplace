@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import ModalLogin from '../../../components/Admin/ModalLogin'
 import * as actions from '../../../store/actions';
@@ -22,17 +23,26 @@ class Login extends Component {
         })
     }
     render () {
-        return (
-            <ModalLogin
-                loading={this.props.loading}
-                hasError={this.props.hasError}
-                closeHandler={this.closeHandler}
-                loginHandler={this.loginHandler}
-                onInputHandler={this.onInputHandler}
-                login={this.state.login}
-                password={this.state.password}
-            />
-        )
+        const { authorized } = this.props
+        if (authorized) {
+            return (
+                <Redirect
+                    to={{ pathname: '/admin' }}
+                />                  
+            )
+        } else {
+            return (
+                <ModalLogin
+                    loading={this.props.loading}
+                    hasError={this.props.hasError}
+                    closeHandler={this.closeHandler}
+                    loginHandler={this.loginHandler}
+                    onInputHandler={this.onInputHandler}
+                    login={this.state.login}
+                    password={this.state.password}
+                />                
+            )
+        }
     }
 }
 
