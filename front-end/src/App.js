@@ -4,15 +4,16 @@ import { Route, Switch } from 'react-router-dom';
 
 import Search from './containers/Search'
 import IndexAdmin from './containers/Admin/Index'
+import Users from './containers/Admin/Users'
 
 class App extends Component {
   render() {
     return (
       <Fragment>
         <Switch>
-          <Route path="/search" component={Search} />
-          <Route path="/admin" component={IndexAdmin} />
-          {/* <Route path="/" exact component={BurgerBuilder} /> */}
+          <Route path="/search" exact component={Search} />
+          <Route path="/admin" exact component={IndexAdmin} />
+          <Route path="/admin/users" exact component={Users} />
         </Switch>
       </Fragment>
     );

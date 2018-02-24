@@ -10,7 +10,7 @@ class AdminIndex extends Component {
     state = {
         login: '',
         password: '',
-        isModalNewUserOpen: true
+        isModalNewUserOpen: false
     }
     closeHandler = () => {
         if (!this.props.authorized) return
