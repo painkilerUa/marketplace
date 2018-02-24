@@ -24,6 +24,7 @@ class Login extends Component {
     }
     render () {
         const { authorized } = this.props
+        console.log('authorized', authorized)
         if (authorized) {
             return (
                 <Redirect
@@ -43,6 +44,17 @@ class Login extends Component {
                 />                
             )
         }
+        return (
+            <ModalLogin
+                loading={this.props.loading}
+                hasError={this.props.hasError}
+                closeHandler={this.closeHandler}
+                loginHandler={this.loginHandler}
+                onInputHandler={this.onInputHandler}
+                login={this.state.login}
+                password={this.state.password}
+            />                
+        )
     }
 }
 

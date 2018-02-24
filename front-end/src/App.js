@@ -15,8 +15,8 @@ class App extends Component {
     return (
       <Fragment>
         <Switch>
-          <Route path="/search" component={Search} />
-          <Route path="/login" component={Login} />
+          <Route path="/search" exact component={Search} />
+          <Route path="/login" exact component={Login} />
           <EnsureLoggedInContainer>
             <Route path="/admin" exact component={IndexAdmin} />
             <Route path="/admin/users" exact component={Users} />          
@@ -27,11 +27,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const { authorized } = state.auth
-  return {
-    authorized
-  };
-};
-
-export default connect( mapStateToProps )(App);
+export default App;

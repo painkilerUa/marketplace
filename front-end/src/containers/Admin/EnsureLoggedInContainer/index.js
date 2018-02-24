@@ -8,9 +8,8 @@ class EnsureLoggedInContainer extends Component {
     }
   
     render() {
-        const { isAuthorized } = this.props.isAuthorized
-
-        if (isAuthorized) {
+        const { authorized } = this.props
+        if (authorized) {
             return this.props.children
         } else {
             return (
@@ -22,10 +21,11 @@ class EnsureLoggedInContainer extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
+    const { authorized } = state.auth
     return {
-        isAuthorized: state.auth.authorized,
-    }
+        authorized
+    };
 }
 
 export default connect(mapStateToProps)(EnsureLoggedInContainer)
