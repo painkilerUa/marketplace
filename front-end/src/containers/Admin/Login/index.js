@@ -24,7 +24,6 @@ class Login extends Component {
     }
     render () {
         const { authorized } = this.props
-        console.log('authorized', authorized)
         if (authorized) {
             return (
                 <Redirect

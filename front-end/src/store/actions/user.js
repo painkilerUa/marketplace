@@ -27,3 +27,20 @@ export const fetchUsers = () => (
             })
     }
 )
+
+export const createUpdateUserStart = () => ({
+    type: actionTypes.CREATE_UPDATE_USER_START
+})
+
+export const createUpdateUser = () => {
+    dispatch => {
+        dispatch(createUpdateUserStart());
+        // axios.get('/users')
+        //     .then( res => {
+        //         dispatch(fetchUsersSuccess(res.data));
+        //     }).catch( err => {
+        //         console.log('ERRORS', err)
+        //         dispatch(fetchUsersFail(err))
+        //     })
+    }
+}
